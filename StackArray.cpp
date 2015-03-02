@@ -99,6 +99,8 @@ void StackArray<DataType>::push(const DataType& newDataItem) throw (logic_error)
     }
 
     // ADD YOUR CODE HERE (should require only a couple lines of code)
+    dataItems[top+1] = newDataItem;
+    maxSize++;
 
 
 }
@@ -116,10 +118,12 @@ DataType StackArray<DataType>::pop() throw (logic_error)
     }
 
     // ADD YOUR CODE HERE (should require only one line of code)
+    DataType temp = dataItems[top];
+    dataItems[top] = 0;
+    top--;
+    maxSize--;
 
-
-
-    return dataItems[top];
+    return temp;
 }
 
 //--------------------------------------------------------------------

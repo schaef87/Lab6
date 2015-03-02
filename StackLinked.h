@@ -18,7 +18,7 @@ using namespace std;
 
 // ADD YOUR CODE HERE (uncomment and complete the 2nd line below)
 template <typename DataType>
-// class StackLinked      {
+ class StackLinked{
 
   public:
 
@@ -35,7 +35,7 @@ template <typename DataType>
     bool isEmpty() const;
 
     // ADD YOUR CODE HERE (need to declare one more member function)
-
+    bool isFull() const;
 
     void showStructure() const;
 

@@ -36,6 +36,11 @@ StackLinked<DataType>::StackLinked(int maxNumber)
 
 {
     // ADD YOUR CODE HERE
+	StackLinked stack = new StackLinked(maxNumber);
+
+	DataType dataItem = 0;
+	StackNode* next = 0;
+
 }
 
 //--------------------------------------------------------------------
@@ -75,9 +80,9 @@ StackLinked<DataType>& StackLinked<DataType>::operator=(const StackLinked& other
         {
             thisTemp = new StackNode(otherTemp->dataItem, 0);
             // ADD YOUR CODE HERE (uncomment and complete the following 3 lines)
-            //thisPrevious->next =
-            //thisPrevious =
-            //otherTemp =
+            thisPrevious->next = 0;
+            thisPrevious = top->next;
+            otherTemp = top;
         }
     }
 
@@ -135,6 +140,9 @@ void StackLinked<DataType>::clear()
 
 {
     // ADD YOUR CODE HERE
+	while(!isEmpty){
+		delete this;
+	}
 }
 
 //--------------------------------------------------------------------
