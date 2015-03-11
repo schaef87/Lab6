@@ -114,6 +114,12 @@ void StackLinked<DataType>::push(const DataType& newDataItem) throw (logic_error
     }
 
     // ADD YOUR CODE HERE
+    if(isEmpty()){
+    	top = new StackNode(newDataItem, 0);
+    } else {
+    	StackNode* store = top;
+    	top = new StackNode(newDataItem, store);
+    }
 }
 
 //--------------------------------------------------------------------
@@ -129,6 +135,10 @@ DataType StackLinked<DataType>::pop() throw (logic_error)
     }
 
     // ADD YOUR CODE HERE
+    DataType mTop = top->dataItem;
+    top = top->next;
+    return mTop;
+
 }
 
 //--------------------------------------------------------------------
@@ -161,11 +171,10 @@ bool StackLinked<DataType>::isEmpty() const
 // ADD YOUR CODE HERE (need to implement the function you added to the .h file)
 //      NOTE: the function has just one line
 
-
-
-
-
-
+template <typename DataType>
+bool StackLinked<DataType>::isFull() const{
+	return false;
+}
 
 
 //--------------------------------------------------------------------
